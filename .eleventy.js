@@ -3,9 +3,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("base", "base.njk");
   eleventyConfig.addLayoutAlias("blog", "blog.njk");
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("index.html");
+  
   eleventyConfig.addCollection("blog", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/blog/**/*.md");
   });
+  
   return {
     dir: {
       input: "src",
