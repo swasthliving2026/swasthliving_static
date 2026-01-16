@@ -1,0 +1,37 @@
+/* =================================================
+   PALETTE — WARM ORANGE (#FFA951) + AIRY LIGHT BASE
+   Feel: Energetic • Friendly • Premium • Conversion-focused
+================================================= */
+
+:root {
+  /* MAIN PAGE BACKGROUND */
+  --bg-main: #fffaf6;
+
+  /* PRIMARY BRAND COLOR */
+  --primary: #FFA951;          /* header, footer, CTA */
+  --btn-text: #3a1e00;
+
+  /* TEXT */
+  --heading: #2b2b2b;
+  --text-main: #3f3f3f;
+  --text-muted: #6d6d6d;
+
+  /* HEADER & FOOTER */
+  --header-bg: #FFA951;
+  --header-text: #2b2b2b;
+
+  --footer-bg: #FFA951;
+  --footer-text: #2b2b2b;
+
+  /* CARDS */
+  --card-bg: #ffffff;
+
+  /* SOFT SECTION ACCENT (for contact strip etc.) */
+  --accent-soft: #fff1e3;
+
+  /* SHADOWS (light & floating, no boxy feel) */
+  --shadow-soft: 0 10px 26px rgba(0,0,0,0.06);
+  --shadow-medium: 0 16px 38px rgba(0,0,0,0.09);
+  --shadow-strong: 0 26px 60px rgba(0,0,0,0.14);
+}
+

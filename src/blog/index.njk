@@ -1,0 +1,38 @@
+---
+layout: base.njk
+title: Swasth Blog
+description: Evidence-based insights on fat loss, nutrition, metabolism, and lifestyle.
+---
+
+<!-- ================= BLOG HERO ================= -->
+<section class="blog-hero">
+  <div class="blog-hero-inner">
+    <h1 class="blog-title">Swasth Blog</h1>
+    <p class="blog-subtitle">
+      Evidence-based insights on fat loss, nutrition, metabolism, and lifestyle —
+      built for Indian bodies and real life.
+    </p>
+  </div>
+</section>
+
+<!-- ================= BLOG LIST ================= -->
+<section class="blog-list-section">
+  <div class="container">
+
+    <div class="post-list">
+      {% for post in collections.blog %}
+        <a href="{{ post.url }}" class="post-item">
+          <h3>{{ post.data.title }}</h3>
+
+          {% if post.data.description %}
+            <p class="post-excerpt">
+              {{ post.data.description }}
+            </p>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
