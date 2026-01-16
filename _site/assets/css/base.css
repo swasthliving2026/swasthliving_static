@@ -1,0 +1,166 @@
+/* =================================================
+   SWASTHLIVING — BASE SYSTEM (BUG FREE)
+================================================= */
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Arial, sans-serif;
+  line-height: 1.65;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 6rem 0;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--heading);
+}
+
+h1 {
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  line-height: 1.1;
+  margin-bottom: 1.4rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.section-subheadline {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0 auto 3rem;
+  max-width: 720px;
+}
+
+/* HEADER */
+.site-header {
+  background: var(--header-bg);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 2rem;
+}
+
+.brand a {
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: var(--header-text);
+}
+
+.main-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--header-text);
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      to right,
+      rgba(255,255,255,0.85),
+      rgba(255,255,255,0.55),
+      rgba(255,255,255,0.25)
+    ),
+    url("/assets/images/hero.jpg") left center / cover no-repeat;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero-subheadline {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 0.95rem 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--btn-text);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+/* CARDS */
+.card-grid {
+  display: grid;
+  gap: 2.6rem;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 2.6rem;
+  border-radius: 22px;
+  box-shadow: var(--shadow-soft);
+}
+
+.card p {
+  color: var(--text-muted);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav {
+    display: none;
+  }
+}
+
