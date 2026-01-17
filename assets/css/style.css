@@ -1,7 +1,7 @@
 /* =================================================
    SWASTHLIVING — DARK CINEMATIC (STABLE)
    CLEAN BASELINE — DESKTOP LOCKED + MOBILE SAFE
-   -------------------------------------------------
+   ----------------------------------------------
    ✔ Desktop visuals locked
    ✔ Mobile styles fully isolated
    ✔ No duplicate rules
@@ -21,7 +21,7 @@
   --white: #ffffff;
 
   --container-max: 1200px;
-  --content-max: 760px;
+  --content-max: 760p;
 
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -85,6 +85,7 @@ section > .container > h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative; /* anchor for mobile nav */
 }
 .brand a {
   font-size: 1.8rem;
@@ -114,6 +115,49 @@ section > .container > h2 {
   display: none;
   gap: 2.4rem;
 }
+.main-nav a {
+  font-weight: 700;
+  color: var(--black);
+}
+
+/* Mobile nav open state (JS toggles .is-open) */
+.main-nav.is-open {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  background: var(--yellow);
+  padding: 1.2rem 1.4rem;
+
+  border-top: 1px solid rgba(0,0,0,0.15);
+  z-index: 2500;
+}
+
+.main-nav.is-open a {
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Programs list visible on mobile */
+.main-nav.is-open .dropdown-menu {
+  position: static;
+  display: block;
+  background: transparent;
+  border: none;
+  padding: 0.4rem 0 0.6rem 1rem;
+}
+
+.main-nav.is-open .dropdown-menu a {
+  color: var(--black);
+  font-weight: 600;
+}
+
 .main-nav a {
   font-weight: 700;
   color: var(--black);
@@ -268,30 +312,6 @@ Dropdown (desktop only) ===== */
    MOBILE ONLY — FULLY ISOLATED (SAFE)
 ================================================= */
 @media (max-width: 768px) {
-
-  /* Mobile nav open state */
-  .main-nav.nav-open {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-
-    background: var(--yellow);
-    padding: 1.2rem 1.4rem;
-
-    border-top: 1px solid rgba(0,0,0,0.15);
-    z-index: 2500;
-  }
-
-  .main-nav.nav-open a {
-    color: var(--black);
-    font-size: 1rem;
-    font-weight: 700;
-  }
 
   section { padding: 3rem 0.8rem; }
 
