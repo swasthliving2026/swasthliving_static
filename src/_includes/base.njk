@@ -13,38 +13,74 @@
 <body>
 
   <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-container">
-      <div class="brand">
-        <a href="/">SwasthLiving</a>
-      </div>
-      <nav class="main-nav">
-        <a href="/programs/">Programs</a>
-        <a href="/blog/">Blog</a>
-        <a href="/contact/">Contact</a>
-      </nav>
+<header class="site-header">
+  <div class="header-container">
+    <div class="brand">
+      <a href="/">SwasthLiving</a>
     </div>
-  </header>
 
+<button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<nav class="main-nav" aria-label="Primary">
+  <div class="nav-item dropdown">
+    <a href="/#programs" class="dropdown-toggle">Programs</a>
+    <div class="dropdown-menu">
+      <a href="/programs/8-week-body-reboot/">8-Week Body Reboot</a>
+      <a href="/programs/12-week-total-transformation/">12-Week Total Transformation</a>
+      <a href="/programs/24-week-metabolic-rebuild/">24-Week Metabolic Rebuild</a>
+      <a href="/programs/gut-health-reset/">Gut Health Reset</a>
+      <a href="/programs/injury-rehab/">Injury Rehab & Recovery</a>
+    </div>
+  </div>
+  <a href="/blog/">Blog</a>
+  <a href="/contact/">Contact</a>
+</nav>
+
+
+  </div>
+</header>
   <!-- MAIN (THIS IS CRITICAL) -->
   <main id="main-content">
     {{ content | safe }}
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h3>SwasthLiving</h3>
-        <p>Sustainable fat loss through compassionate coaching.</p>
-      </div>
-    </div>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>SwasthLiving</h3>
+      <p class="footer-tagline">Sustainable fat loss through compassionate coaching.</p>
 
-    <div class="footer-bottom">
-      <p>© SwasthLiving. All rights reserved.</p>
-    </div>
-  </footer>
 
+  <ul class="footer-contact">
+    <li>Email: <a href="mailto:support@swasthliving.in">support@swasthliving.in</a></li>
+    <li>WhatsApp: <a href="https://wa.me/918329676528" target="_blank">+91 83296 76528</a></li>
+    <li class="footer-geo">Online coaching worldwide</li>
+  </ul>
+</div>
+
+<div class="footer-links">
+  <h4>Useful Links</h4>
+  <ul>
+    <li><a href="/#programs">Programs</a></li>
+    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+    <li><a href="/terms-and-conditions/">Terms & Conditions</a></li>
+  </ul>
+</div>
+
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© SwasthLiving. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/assets/js/mobile-nav.js"></script>
 </body>
 </html>
 
