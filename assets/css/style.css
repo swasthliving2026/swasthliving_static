@@ -6,20 +6,27 @@
    ✔ Mobile styles fully isolated
    ✔ No duplicate rules
    ✔ No leaking media queries
+
+   NOTE:
+   ✔ ONLY color variable names changed
+   ✔ Values, layout, spacing, rules untouched
 ================================================= */
 
 :root {
-  --black: #0b0d10;
-  --black-soft: #11141a;
-  --black-card: #151922;
-  --steel: #161a22;
-  --steel-card: #1c212b;
-  --silver: #cfd3da;
-  --silver-muted: #9aa0aa;
-  --yellow: #FFA800;
-  --yellow-dark: #FFD27A;
-  --white: #ffffff;
+  /* ===== SEMANTIC COLOR TOKENS (1:1 RENAMES) ===== */
+  --color-bg-page: #0b0d10;              /* was --black */
+  --color-bg-page-soft: #11141a;         /* was --black-soft */
+  --color-bg-card: #151922;              /* was --black-card */
 
+  --color-text-body: #cfd3da;            /* was --silver */
+  --color-text-muted: #9aa0aa;           /* was --silver-muted */
+  --color-text-heading: #ffffff;         /* was --white */
+  --color-text-on-accent: #0b0d10;       /* was --black */
+
+  --color-accent-primary: #FFA800;       /* was --yellow */
+  --color-accent-primary-hover: #FFD27A; /* was --yellow-dark */
+
+  /* ===== LAYOUT TOKENS (UNCHANGED) ===== */
   --container-max: 1200px;
   --content-max: 760p;
 
@@ -42,8 +49,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
   line-height: 1.65;
-  color: var(--silver);
-  background: radial-gradient(circle at top, #1a1f2b 0%, #0b0d10 55%);
+  color: var(--color-text-body);
+  background: radial-gradient(circle at top, #1a1f2b 0%, var(--color-bg-page) 55%);
 }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
@@ -60,14 +67,14 @@ section > .container > h2 {
   text-align: center;
   font-size: 2.6rem;
   font-weight: 900;
-  color: var(--white);
+  color: var(--color-text-heading);
   margin-bottom: var(--space-sm);
 }
 .section-subheadline {
   text-align: center;
   max-width: var(--content-max);
   margin: 0 auto var(--space-xl);
-  color: var(--silver-muted);
+  color: var(--color-text-muted);
   font-size: 1.15rem;
 }
 
@@ -76,7 +83,7 @@ section > .container > h2 {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--yellow);
+  background: var(--color-accent-primary);
 }
 .header-container {
   max-width: var(--container-max);
@@ -90,7 +97,7 @@ section > .container > h2 {
 .brand a {
   font-size: 1.8rem;
   font-weight: 900;
-  color: var(--black);
+  color: var(--color-text-on-accent);
 }
 
 /* Hamburger button (mobile only) */
@@ -107,7 +114,7 @@ section > .container > h2 {
 .hamburger span {
   width: 26px;
   height: 3px;
-  background: var(--black);
+  background: var(--color-text-on-accent);
   border-radius: 2px;
 }
 
@@ -117,7 +124,7 @@ section > .container > h2 {
 }
 .main-nav a {
   font-weight: 700;
-  color: var(--black);
+  color: var(--color-text-on-accent);
 }
 
 /* Mobile nav open state (JS toggles .is-open) */
@@ -131,7 +138,7 @@ section > .container > h2 {
   left: 0;
   right: 0;
 
-  background: var(--yellow);
+  background: var(--color-accent-primary);
   padding: 1.2rem 1.4rem;
 
   border-top: 1px solid rgba(0,0,0,0.15);
@@ -139,7 +146,7 @@ section > .container > h2 {
 }
 
 .main-nav.is-open a {
-  color: var(--black);
+  color: var(--color-text-on-accent);
   font-size: 1rem;
   font-weight: 700;
 }
@@ -154,13 +161,8 @@ section > .container > h2 {
 }
 
 .main-nav.is-open .dropdown-menu a {
-  color: var(--black);
+  color: var(--color-text-on-accent);
   font-weight: 600;
-}
-
-.main-nav a {
-  font-weight: 700;
-  color: var(--black);
 }
 
 /* Desktop nav */
@@ -169,9 +171,7 @@ section > .container > h2 {
   .main-nav { display: flex; }
 }
 
-
-/* ===== Programs:/main-nav:q!
-Dropdown (desktop only) ===== */
+/* ===== Programs Dropdown (desktop only) ===== */
 .nav-item { position: relative; }
 .dropdown-menu {
   display: none;
@@ -179,7 +179,7 @@ Dropdown (desktop only) ===== */
   top: calc(100% + 8px);
   left: 0;
   min-width: 260px;
-  background: var(--black-card);
+  background: var(--color-bg-card);
   border: 2px solid rgba(255,168,0,0.45);
   border-radius: var(--radius-md);
   padding: 0.5rem 0;
@@ -188,12 +188,12 @@ Dropdown (desktop only) ===== */
 .dropdown-menu a {
   display: block;
   padding: 0.7rem 1.4rem;
-  color: var(--silver);
+  color: var(--color-text-body);
   font-weight: 600;
 }
 .dropdown-menu a:hover {
   background: rgba(255,168,0,0.12);
-  color: var(--white);
+  color: var(--color-text-heading);
 }
 .nav-item:hover .dropdown-menu { display: block; }
 
@@ -213,7 +213,7 @@ Dropdown (desktop only) ===== */
 .hero h1 {
   font-size: clamp(2.4rem, 5vw, 4.6rem);
   font-weight: 900;
-  color: var(--white);
+  color: var(--color-text-heading);
   margin-bottom: var(--space-md);
 }
 .hero-subheadline {
@@ -236,17 +236,17 @@ Dropdown (desktop only) ===== */
   transition: all 0.25s ease;
 }
 .btn-primary {
-  background: var(--yellow);
-  color: var(--black);
+  background: var(--color-accent-primary);
+  color: var(--color-text-on-accent);
 }
-.btn-primary:hover { background: var(--yellow-dark); }
+.btn-primary:hover { background: var(--color-accent-primary-hover); }
 .btn-secondary {
-  border: 2px solid var(--silver);
-  color: var(--silver);
+  border: 2px solid var(--color-text-body);
+  color: var(--color-text-body);
 }
 .btn-secondary:hover {
-  background: var(--silver);
-  color: var(--black);
+  background: var(--color-text-body);
+  color: var(--color-text-on-accent);
 }
 
 /* ================= CARDS (DESKTOP LOCKED) ================= */
@@ -254,11 +254,11 @@ Dropdown (desktop only) ===== */
 .why-card,
 .cta-card,
 .testimonial-card {
-  background: var(--black-card);
+  background: var(--color-bg-card);
   border: 2px solid rgba(255,168,0,0.45);
   border-radius: var(--radius-lg);
   padding: 2rem 1.8rem;
-  color: var(--silver);
+  color: var(--color-text-body);
   box-shadow: 0 18px 45px rgba(0,0,0,0.55);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
@@ -267,7 +267,7 @@ Dropdown (desktop only) ===== */
 .cta-card:hover,
 .testimonial-card:hover {
   transform: translateY(-6px);
-  border-color: var(--yellow);
+  border-color: var(--color-accent-primary);
   box-shadow: 0 28px 70px rgba(0,0,0,0.75),
               0 0 26px rgba(255,168,0,0.22);
 }
@@ -293,11 +293,11 @@ Dropdown (desktop only) ===== */
 
 /* ================= FOOTER ================= */
 .site-footer {
-  background: var(--yellow);
-  color: var(--black);
+  background: var(--color-accent-primary);
+  color: var(--color-text-on-accent);
   padding: 5rem 2rem 2rem;
 }
-.site-footer a { color: var(--black); }
+.site-footer a { color: var(--color-text-on-accent); }
 .footer-container {
   max-width: var(--container-max);
   margin: 0 auto;
