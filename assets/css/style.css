@@ -14,7 +14,8 @@
 
 :root {
   /* ===== SEMANTIC COLOR TOKENS (1:1 RENAMES) ===== */
-  --color-bg-page: #0b0d10;              /* was --black */
+ 
+  --color-bg-page:#0b0d10 75%; 
   --color-bg-page-soft: #11141a;         /* was --black-soft */
   --color-bg-card: #151922;              /* was --black-card */
 
@@ -23,7 +24,7 @@
   --color-text-heading: #ffffff;         /* was --white */
   --color-text-on-accent: #0b0d10;       /* was --black */
 
-  --color-accent-primary: #FFA800;       /* was --yellow */
+  --color-accent-primary: linear-gradient(135deg, rgba(212,175,55,0.6) 0%, rgba(255,236,179,0.8) 50%, rgba(173,137,34,0.6) 100%);       /* was --yellow */
   --color-accent-primary-hover: #FFD27A; /* was --yellow-dark */
 
   /* ===== LAYOUT TOKENS (UNCHANGED) ===== */
@@ -63,9 +64,9 @@ section {
   max-width: var(--container-max);
   margin: 0 auto;
 }
-section > .container > h2 {
+section .section-header h2 {
   text-align: center;
-  font-size: 2.6rem;
+  font-size: 3rem;
   font-weight: 900;
   color: var(--color-text-heading);
   margin-bottom: var(--space-sm);
@@ -73,9 +74,21 @@ section > .container > h2 {
 .section-subheadline {
   text-align: center;
   max-width: var(--content-max);
-  margin: 0 auto var(--space-xl);
+  margin: 0 auto var(--space-sm);
+  margin-top: -1.5rem;
   color: var(--color-text-muted);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
+}
+.cta-subline {
+  text-align: center;
+  font-size: 1.25rem;          /* ← noticeable but not loud */
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 0.8rem auto 0;      /* closer to heading */
+  color: var(--color-text-muted);
+}
+.conversion-cta .section-header {
+  margin-bottom: 3rem;   /* increase/decrease this */
 }
 
 /* ================= HEADER ================= */
