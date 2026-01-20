@@ -404,4 +404,63 @@ section .section-header h2 {
     padding: 3rem 1rem 1.8rem;
   }
 }
+/* Conversion CTA background */
+.conversion-cta {
+  position: relative;
+  background:
+    linear-gradient(
+      rgba(11,13,16,0.4),
+      rgba(11,13,16,0.65)
+    ),
+    url("/assets/images/conversion-bg.jpg") center / cover no-repeat;
 
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+/* Why SwasthLiving background */
+.why-section {
+  position: relative;
+  background:
+    linear-gradient(
+      rgba(11,13,16,0.45),
+      rgba(11,13,16,0.55)
+    ),
+    url("/assets/images/why-bg.jpg") center / cover no-repeat;
+
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+/* Programs section background */
+.programs {
+  position: relative;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.programs::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      rgba(11,13,16,0.6),
+      rgba(11,13,16,0.8)
+    ),
+    url("/assets/images/programs-bg.jpg") center / cover no-repeat;
+  z-index: 0;
+}
+.programs > * {
+  position: relative;
+  z-index: 1;
+}
+.programs .program-card {
+  box-shadow: 0 18px 45px rgba(0,0,0,0.65);
+}
+/* Contact strip background (no overlay) */
+.contact-strip {
+  position: relative;
+  background: url("/assets/images/contact-bg.jpg") center / cover no-repeat;
+
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
