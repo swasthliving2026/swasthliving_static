@@ -151,7 +151,7 @@ section .section-header h2 {
   left: 0;
   right: 0;
 
-  background: var(--color-accent-primary);
+  background: var(--color-bg-card);
   padding: 1.2rem 1.4rem;
 
   border-top: 1px solid rgba(0,0,0,0.15);
@@ -168,13 +168,14 @@ section .section-header h2 {
 .main-nav.is-open .dropdown-menu {
   position: static;
   display: block;
-  background: transparent;
+  background: var(--color-bg-page-soft);
+  border-radius: var(--radius-sm);
   border: none;
   padding: 0.4rem 0 0.6rem 1rem;
 }
 
 .main-nav.is-open .dropdown-menu a {
-  color: var(--color-text-on-accent);
+  color: var(--color-text-heading);
   font-weight: 600;
 }
 
