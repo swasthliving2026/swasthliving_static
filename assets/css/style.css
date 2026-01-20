@@ -190,7 +190,7 @@ section .section-header h2 {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc 100%;
   left: 0;
   min-width: 260px;
   background: var(--color-bg-card);
@@ -209,8 +209,20 @@ section .section-header h2 {
   background: rgba(255,168,0,0.12);
   color: var(--color-text-heading);
 }
-.nav-item:hover .dropdown-menu { display: block; }
-
+.nav-item:hover .dropdown-menu,
+.nav-item:focus-within .dropdown-menu,
+.nav-item .dropdown-menu:hover {
+  display: block;
+}
+/* Hover bridge */
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
 /* ================= HERO (DESKTOP LOCKED) ================= */
 .hero {
   min-height: calc(100vh - 88px);
@@ -268,22 +280,19 @@ section .section-header h2 {
 .why-card,
 .cta-card,
 .testimonial-card {
-  background: var(--color-bg-card);
-  border: 2px solid rgba(255,168,0,0.45);
+  background: rgba(21, 25, 34, 0.65); /* ← subtle transparency */
+  border: none;
   border-radius: var(--radius-lg);
   padding: 2rem 1.8rem;
-  color: var(--color-text-body);
-  box-shadow: 0 18px 45px rgba(0,0,0,0.55);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.4);
+  backdrop-filter: saturate(1.05) blur(4px); /* optional but beautiful */
 }
 .program-card:hover,
 .why-card:hover,
 .cta-card:hover,
 .testimonial-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--color-accent-primary);
-  box-shadow: 0 28px 70px rgba(0,0,0,0.75),
-              0 0 26px rgba(255,168,0,0.22);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.55);
 }
 
 /* ================= GRIDS ================= */
