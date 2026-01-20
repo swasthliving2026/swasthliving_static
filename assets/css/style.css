@@ -66,7 +66,7 @@ section {
 }
 section .section-header h2 {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 900;
   color: var(--color-text-heading);
   margin-bottom: var(--space-sm);
@@ -77,11 +77,11 @@ section .section-header h2 {
   margin: 0 auto var(--space-sm);
   margin-top: -1.5rem;
   color: var(--color-text-muted);
-  font-size: 1.25rem;
+  font-size: 1.05rem;
 }
 .cta-subline {
   text-align: center;
-  font-size: 1.25rem;          /* ← noticeable but not loud */
+  font-size: 1.05rem;          /* ← noticeable but not loud */
   line-height: 1.6;
   max-width: 680px;
   margin: 0.8rem auto 0;      /* closer to heading */
